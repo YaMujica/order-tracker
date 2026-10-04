@@ -74,6 +74,7 @@ services:
     volumes:
       - ./observability/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
       - ./observability/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./observability/grafana/provisioning/alerting:/etc/grafana/provisioning/alerting:ro
       - ./observability/grafana/dashboards:/etc/grafana/dashboards:ro
     ports:
       - "127.0.0.1:3000:3000"
