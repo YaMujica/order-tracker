@@ -70,13 +70,18 @@ class StatusUpdate(BaseModel):
     status: str
 
 
+from app.telemetry import setup_telemetry, shutdown_telemetry
+
+
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     init_db()
     yield
+    shutdown_telemetry()
 
 
 app = FastAPI(title="Order Tracker", lifespan=lifespan)
+setup_telemetry(app)
 
 
 @app.get("/")
