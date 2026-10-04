@@ -1,0 +1,925 @@
+{
+  "prometheus_5xx": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "http_requests_total",
+            "exported_instance": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "exported_job": "order-tracker",
+            "instance": "collector:8889",
+            "job": "otel-collector",
+            "method": "GET",
+            "route": "/api/orders/{order_id}",
+            "status_code": "500"
+          },
+          "value": [
+            1791101519.708,
+            "4"
+          ]
+        }
+      ]
+    }
+  },
+  "loki_logs": {
+    "status": "success",
+    "data": {
+      "resultType": "streams",
+      "result": [
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101515676078250",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "58b6f5d63f8163c7",
+            "otelTraceID": "7cd0b3936304fe22c3e0209e0594e93e",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "daea1036-2ccb-4824-86f6-f0e2e17f326c",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "58b6f5d63f8163c7",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "7cd0b3936304fe22c3e0209e0594e93e"
+          },
+          "values": [
+            [
+              "1791101515676034048",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101510586020412",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "8994ad5e8994f597",
+            "otelTraceID": "961c3d5b16fcd21e0f6979fef35ea70e",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "daea1036-2ccb-4824-86f6-f0e2e17f326c",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "8994ad5e8994f597",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "961c3d5b16fcd21e0f6979fef35ea70e"
+          },
+          "values": [
+            [
+              "1791101510585974016",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101509805509988",
+            "order_id": "express-1002",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "b90e0275cc83f665",
+            "otelTraceID": "fe03cbac53cfe057307103fcded13191",
+            "otelTraceSampled": "true",
+            "route": "/api/orders/{order_id}",
+            "scope_name": "order-tracker",
+            "service_instance_id": "daea1036-2ccb-4824-86f6-f0e2e17f326c",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "b90e0275cc83f665",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "fe03cbac53cfe057307103fcded13191"
+          },
+          "values": [
+            [
+              "1791101509805455616",
+              "GET /api/orders/{order_id} completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101505488942308",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "e4d0620ee0ee1709",
+            "otelTraceID": "aa5c0a166529d09d3242e38cd82bffcf",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "daea1036-2ccb-4824-86f6-f0e2e17f326c",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "e4d0620ee0ee1709",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "aa5c0a166529d09d3242e38cd82bffcf"
+          },
+          "values": [
+            [
+              "1791101505488876032",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101499646377827",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "c672bd2f2891769b",
+            "otelTraceID": "79de8436245de975731b48886163aa6a",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "c672bd2f2891769b",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "79de8436245de975731b48886163aa6a"
+          },
+          "values": [
+            [
+              "1791101499646333696",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101495674615289",
+            "order_id": "express-1002",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "3c40e799096a3190",
+            "otelTraceID": "fae63a7d151826515cacaa880aa195c3",
+            "otelTraceSampled": "true",
+            "route": "/api/orders/{order_id}",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "3c40e799096a3190",
+            "status_code": "500",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "fae63a7d151826515cacaa880aa195c3"
+          },
+          "values": [
+            [
+              "1791101495674568704",
+              "GET /api/orders/{order_id} completed with status 500"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101494554638574",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "5b1afd9160402ee5",
+            "otelTraceID": "7b109aa59c782541c4130db09f3b5c5e",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "5b1afd9160402ee5",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "7b109aa59c782541c4130db09f3b5c5e"
+          },
+          "values": [
+            [
+              "1791101494554594304",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101489462763454",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "a9c8cfd7de3eecbd",
+            "otelTraceID": "bb9c9ed527b591c1b01325f1c65f2e3a",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "a9c8cfd7de3eecbd",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "bb9c9ed527b591c1b01325f1c65f2e3a"
+          },
+          "values": [
+            [
+              "1791101489462717696",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101484367617702",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "ac16d2cc643bc3be",
+            "otelTraceID": "6c241ac898fe6051b2561c97f8e3958c",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "ac16d2cc643bc3be",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "6c241ac898fe6051b2561c97f8e3958c"
+          },
+          "values": [
+            [
+              "1791101484367572992",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101479275475596",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "73e2bf4faf59dab4",
+            "otelTraceID": "1653ca29d552e6dc89fc2a8fdc39d38d",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "73e2bf4faf59dab4",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "1653ca29d552e6dc89fc2a8fdc39d38d"
+          },
+          "values": [
+            [
+              "1791101479275428864",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101474162998175",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "5a99823904fd7934",
+            "otelTraceID": "658434e1c3214715c844b95f166939bb",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "5a99823904fd7934",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "658434e1c3214715c844b95f166939bb"
+          },
+          "values": [
+            [
+              "1791101474162952448",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101469070035251",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "1a6489f1cc28ca19",
+            "otelTraceID": "96d4854f81af2dbecdee0a3ef4f9911d",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "1a6489f1cc28ca19",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "96d4854f81af2dbecdee0a3ef4f9911d"
+          },
+          "values": [
+            [
+              "1791101469069990400",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101463978614361",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "b059ebdda54cbefa",
+            "otelTraceID": "ef48c75bf1208aa7ac3d5d9196e044a1",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "b059ebdda54cbefa",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "ef48c75bf1208aa7ac3d5d9196e044a1"
+          },
+          "values": [
+            [
+              "1791101463978568960",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101458886762110",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "b4a534f004e1dfa5",
+            "otelTraceID": "17fe48ded9233e74b2809e50a60ff445",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "b4a534f004e1dfa5",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "17fe48ded9233e74b2809e50a60ff445"
+          },
+          "values": [
+            [
+              "1791101458886716416",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101453794428632",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "ef0ad06903079893",
+            "otelTraceID": "3e14d5eedf99ae4a0c8256cfb312fce8",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "ef0ad06903079893",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "3e14d5eedf99ae4a0c8256cfb312fce8"
+          },
+          "values": [
+            [
+              "1791101453794381824",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101448703406925",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "b374ab8ab837f2fc",
+            "otelTraceID": "f56228bfeece348c7a617cc78050eef5",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "b374ab8ab837f2fc",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "f56228bfeece348c7a617cc78050eef5"
+          },
+          "values": [
+            [
+              "1791101448703362304",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101443608540011",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "3ab7ca23e6142293",
+            "otelTraceID": "034c2c928964723ca0ef2ebccc5c787c",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "3ab7ca23e6142293",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "034c2c928964723ca0ef2ebccc5c787c"
+          },
+          "values": [
+            [
+              "1791101443608494080",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101438519399449",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "76d3299c2e9a76c7",
+            "otelTraceID": "2fd4b76b578bb4d3a33f96020cea5627",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "76d3299c2e9a76c7",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "2fd4b76b578bb4d3a33f96020cea5627"
+          },
+          "values": [
+            [
+              "1791101438519353856",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101433427925574",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "c15f7ab2807e8a69",
+            "otelTraceID": "445411d347d977d589723a3bccdc3c59",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "c15f7ab2807e8a69",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "445411d347d977d589723a3bccdc3c59"
+          },
+          "values": [
+            [
+              "1791101433427879936",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        },
+        {
+          "stream": {
+            "code_file_path": "/app/app/telemetry.py",
+            "code_function_name": "dispatch",
+            "code_line_number": "149",
+            "detected_level": "info",
+            "flags": "3",
+            "observed_timestamp": "1791101428335644177",
+            "order_id": "",
+            "otelServiceName": "order-tracker",
+            "otelSpanID": "71f5fc72641a42d1",
+            "otelTraceID": "2327dfd1e7846a9643b7212616cc7a8a",
+            "otelTraceSampled": "true",
+            "route": "/healthz",
+            "scope_name": "order-tracker",
+            "service_instance_id": "235584a2-22ec-465f-9b3b-b7a49d2a91f6",
+            "service_name": "order-tracker",
+            "severity_number": "9",
+            "severity_text": "INFO",
+            "span_id": "71f5fc72641a42d1",
+            "status_code": "200",
+            "telemetry_sdk_language": "python",
+            "telemetry_sdk_name": "opentelemetry",
+            "telemetry_sdk_version": "1.45.0",
+            "trace_id": "2327dfd1e7846a9643b7212616cc7a8a"
+          },
+          "values": [
+            [
+              "1791101428335599872",
+              "GET /healthz completed with status 200"
+            ]
+          ]
+        }
+      ],
+      "stats": {
+        "summary": {
+          "bytesProcessedPerSecond": 12336515,
+          "linesProcessedPerSecond": 34036,
+          "totalBytesProcessed": 94238,
+          "totalLinesProcessed": 260,
+          "execTime": 0.007639,
+          "queueTime": 9e-05,
+          "subqueries": 0,
+          "totalEntriesReturned": 20,
+          "splits": 1,
+          "shards": 1,
+          "totalPostFilterLines": 260,
+          "totalStructuredMetadataBytesProcessed": 81408
+        },
+        "querier": {
+          "store": {
+            "totalChunksRef": 0,
+            "totalChunksDownloaded": 0,
+            "chunksDownloadTime": 0,
+            "queryReferencedStructuredMetadata": false,
+            "chunk": {
+              "headChunkBytes": 0,
+              "headChunkLines": 0,
+              "decompressedBytes": 0,
+              "decompressedLines": 0,
+              "compressedBytes": 0,
+              "totalDuplicates": 0,
+              "postFilterLines": 0,
+              "headChunkStructuredMetadataBytes": 0,
+              "decompressedStructuredMetadataBytes": 0
+            },
+            "chunkRefsFetchTime": 0,
+            "congestionControlLatency": 0,
+            "pipelineWrapperFilteredLines": 0
+          }
+        },
+        "ingester": {
+          "totalReached": 1,
+          "totalChunksMatched": 2,
+          "totalBatches": 1,
+          "totalLinesSent": 20,
+          "store": {
+            "totalChunksRef": 1,
+            "totalChunksDownloaded": 1,
+            "chunksDownloadTime": 865664,
+            "queryReferencedStructuredMetadata": false,
+            "chunk": {
+              "headChunkBytes": 23966,
+              "headChunkLines": 116,
+              "decompressedBytes": 70272,
+              "decompressedLines": 144,
+              "compressedBytes": 2701,
+              "totalDuplicates": 0,
+              "postFilterLines": 260,
+              "headChunkStructuredMetadataBytes": 19488,
+              "decompressedStructuredMetadataBytes": 61920
+            },
+            "chunkRefsFetchTime": 131858,
+            "congestionControlLatency": 0,
+            "pipelineWrapperFilteredLines": 0
+          }
+        },
+        "cache": {
+          "chunk": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          },
+          "index": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          },
+          "result": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          },
+          "statsResult": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          },
+          "volumeResult": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          },
+          "seriesResult": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          },
+          "labelResult": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          },
+          "instantMetricResult": {
+            "entriesFound": 0,
+            "entriesRequested": 0,
+            "entriesStored": 0,
+            "bytesReceived": 0,
+            "bytesSent": 0,
+            "requests": 0,
+            "downloadTime": 0,
+            "queryLengthServed": 0
+          }
+        },
+        "index": {
+          "totalChunks": 0,
+          "postFilterChunks": 0,
+          "shardsDuration": 0
+        }
+      }
+    }
+  },
+  "tempo_traces": {
+    "traces": [
+      {
+        "traceID": "c24ad638bbc9f6e3dfa53a5496125d08",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791101020977708426",
+        "durationMs": 2
+      },
+      {
+        "traceID": "7f12e8577d0f0e6676996b5d6252a3ca",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791101015890758901",
+        "durationMs": 2
+      },
+      {
+        "traceID": "4601f3e5408fad2b308fa127d7387968",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791101010800228259",
+        "durationMs": 2
+      },
+      {
+        "traceID": "ec36e36a0b4ab137ac853327be19d2f",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791101005707723587",
+        "durationMs": 2
+      },
+      {
+        "traceID": "48ba2831022eabc103775e007b43b8bf",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791101000616575063",
+        "durationMs": 2
+      },
+      {
+        "traceID": "63f1d40e83b76dc503251f31b61e5a5c",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791100995519384747",
+        "durationMs": 2
+      },
+      {
+        "traceID": "61e25ba974454de130fcd0b9b26f568",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791100990428382456",
+        "durationMs": 2
+      },
+      {
+        "traceID": "ab768b615f5b8220df0eba7a3e7b114d",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791100985337688152",
+        "durationMs": 2
+      },
+      {
+        "traceID": "b51b5e74360a045929f9ac287dedc6af",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791100980246077959",
+        "durationMs": 2
+      },
+      {
+        "traceID": "6bb8df6250f9a9ca82733f76bca0f68a",
+        "rootServiceName": "order-tracker",
+        "rootTraceName": "GET /healthz",
+        "startTimeUnixNano": "1791100975153785352",
+        "durationMs": 2
+      }
+    ],
+    "metrics": {
+      "inspectedTraces": 10,
+      "inspectedBytes": "88767",
+      "completedJobs": 1,
+      "totalJobs": 1
+    }
+  }
+}

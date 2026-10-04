@@ -1,0 +1,56 @@
+{
+  "receiver": "incident-responder-webhook",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "OrderTracker5xxErrors",
+        "grafana_folder": "Order Tracker",
+        "route": "/api/orders/{order_id}",
+        "severity": "critical"
+      },
+      "annotations": {
+        "dashboard_url": "http://localhost:3000/d/order-tracker-dash",
+        "endpoint": "/api/orders/{order_id}",
+        "summary": "5xx server error detected on endpoint /api/orders/{order_id}",
+        "time_window": "1m"
+      },
+      "startsAt": "2026-10-04T08:10:30Z",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://localhost:3000/alerting/grafana/order_tracker_5xx/view?orgId=1",
+      "fingerprint": "cf3750af59b95f3b",
+      "silenceURL": "http://localhost:3000/alerting/silence/new?alertmanager=grafana&matcher=alertname%3DOrderTracker5xxErrors&matcher=grafana_folder%3DOrder+Tracker&matcher=route%3D%2Fapi%2Forders%2F%7Border_id%7D&matcher=severity%3Dcritical&orgId=1",
+      "dashboardURL": "",
+      "panelURL": "",
+      "values": {
+        "B": 2.2724,
+        "C": 1
+      },
+      "valueString": "[ var='B' labels={route=/api/orders/{order_id}} value=2.2724 ], [ var='C' labels={route=/api/orders/{order_id}} value=1 ]"
+    }
+  ],
+  "groupLabels": {
+    "alertname": "OrderTracker5xxErrors"
+  },
+  "commonLabels": {
+    "alertname": "OrderTracker5xxErrors",
+    "grafana_folder": "Order Tracker",
+    "route": "/api/orders/{order_id}",
+    "severity": "critical"
+  },
+  "commonAnnotations": {
+    "dashboard_url": "http://localhost:3000/d/order-tracker-dash",
+    "endpoint": "/api/orders/{order_id}",
+    "summary": "5xx server error detected on endpoint /api/orders/{order_id}",
+    "time_window": "1m"
+  },
+  "externalURL": "http://localhost:3000/",
+  "version": "1",
+  "groupKey": "{}:{alertname=\"OrderTracker5xxErrors\"}",
+  "truncatedAlerts": 0,
+  "orgId": 1,
+  "title": "[FIRING:1] OrderTracker5xxErrors (Order Tracker /api/orders/{order_id} critical)",
+  "state": "alerting",
+  "message": "**Firing**\n\nValue: B=2.2724, C=1\nLabels:\n - alertname = OrderTracker5xxErrors\n - grafana_folder = Order Tracker\n - route = /api/orders/{order_id}\n - severity = critical\nAnnotations:\n - dashboard_url = http://localhost:3000/d/order-tracker-dash\n - endpoint = /api/orders/{order_id}\n - summary = 5xx server error detected on endpoint /api/orders/{order_id}\n - time_window = 1m\nSource: http://localhost:3000/alerting/grafana/order_tracker_5xx/view?orgId=1\nSilence: http://localhost:3000/alerting/silence/new?alertmanager=grafana&matcher=alertname%3DOrderTracker5xxErrors&matcher=grafana_folder%3DOrder+Tracker&matcher=route%3D%2Fapi%2Forders%2F%7Border_id%7D&matcher=severity%3Dcritical&orgId=1\n"
+}

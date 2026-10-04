@@ -1,0 +1,70 @@
+### Incident Report: `incident-20261004-081034`
+
+- **Alert Name**: `OrderTracker5xxErrors`
+- **Severity**: Critical
+- **Route / Endpoint**: `/api/orders/{order_id}`
+- **Evidence**: [evidence.json](file:///home/yami/Documents/ai-dev-tools-zoomcamp-homeworks/hw-4/incident-response/incidents/incident-20261004-081034/evidence.json)
+
+---
+
+### 1. Root Cause Analysis
+
+From [evidence.json](file:///home/yami/Documents/ai-dev-tools-zoomcamp-homeworks/hw-4/incident-response/incidents/incident-20261004-081034/evidence.json), Loki logs and Prometheus metrics indicated repeated HTTP 500 status codes when requests were made to `GET /api/orders/{order_id}` for order ID `express-1002`.
+
+Investigating [`order_detail`](file:///home/yami/Documents/ai-dev-tools-zoomcamp-homeworks/hw-4/app/main.py#L54) in [app/main.py](file:///home/yami/Documents/ai-dev-tools-zoomcamp-homeworks/hw-4/app/main.py) revealed the following bug:
+
+```python
+def order_detail(row):
+    order = as_dict(row)
+    if order["priority"] == "express":
+        placed_at = datetime.fromisoformat(order["created_at"])
+        estimated_at = placed_at.replace(day=placed_at.day + 2)
+        order["estimated_delivery"] = estimated_at.date().isoformat()
+    return order
+```
+
+- When seeded or created at the end of a month (such as `express-1002`, seeded at `previous_month_end`), `placed_at.day + 2` evaluates to a day beyond the total number of days in that month (e.g., day 32 or 33).
+- Calling `placed_at.replace(day=placed_at.day + 2)` throws an unhandled `ValueError: day is out of range for month`, causing the application to return an HTTP 500 Internal Server Error.
+
+---
+
+### 2. Changes Made
+
+1. **Bug Fix in [app/main.py](file:///home/yami/Documents/ai-dev-tools-zoomcamp-homeworks/hw-4/app/main.py#L54-L60)**:
+   Replaced day replacement with proper date arithmetic using `timedelta(days=2)`:
+   ```python
+   def order_detail(row):
+       order = as_dict(row)
+       if order["priority"] == "express":
+           placed_at = datetime.fromisoformat(order["created_at"])
+           estimated_at = placed_at + timedelta(days=2)
+           order["estimated_delivery"] = estimated_at.date().isoformat()
+       return order
+   ```
+
+2. **Added Test Coverage in [tests/test_api.py](file:///home/yami/Documents/ai-dev-tools-zoomcamp-homeworks/hw-4/tests/test_api.py#L37-L44)**:
+   Added [`test_express_order_detail`](file:///home/yami/Documents/ai-dev-tools-zoomcamp-homeworks/hw-4/tests/test_api.py#L38) to verify that seeded month-end express orders (like `express-1002`) are successfully retrieved with `status_code == 200` and include the valid `estimated_delivery` field.
+
+---
+
+### 3. Verification & Test Results
+
+1. **Pytest Execution**:
+   Ran `pytest` with all tests passing:
+   ```
+   tests/test_api.py ....                                                   [100%]
+   ======================== 4 passed, 3 warnings in 0.41s =========================
+   ```
+
+2. **Endpoint Verification**:
+   Rebuilt and verified the running container via `curl http://localhost:8000/api/orders/express-1002`:
+   ```json
+   HTTP/1.1 200 OK
+   {"id":"express-1002","customer":"Sam","item":"Headphones","priority":"express","status":"preparing","created_at":"2026-09-30T05:39:50.158749+00:00","estimated_delivery":"2026-10-02"}
+   ```
+
+---
+
+### 4. Final Diagnosis & Conclusion
+
+The incident has been resolved. The 500 errors were caused by improper date calculation using `.replace(day=...)` on express orders placed near month-end dates. With date arithmetic transitioned to `+ timedelta(days=2)`, month rollover is handled seamlessly, the endpoint returns HTTP 200 OK, and all unit tests pass.

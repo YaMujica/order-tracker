@@ -140,6 +140,12 @@ Instructions:
     with open(latest_file, "w", encoding="utf-8") as f:
         f.write(agent_response)
 
+    if not is_test:
+        logger.info("Rebuilding and restarting app container to apply the fix...")
+        subprocess.run(["docker", "compose", "up", "--build", "-d", "--wait", "app"], cwd=str(REPO_DIR))
+        verify_cmd = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "http://localhost:8000/api/orders/express-1002"], capture_output=True, text=True)
+        logger.info(f"Verification HTTP status code: {verify_cmd.stdout.strip()}")
+
     print("\n--- AGENT RESPONSE START ---")
     print(agent_response)
     print("--- AGENT RESPONSE END ---\n")

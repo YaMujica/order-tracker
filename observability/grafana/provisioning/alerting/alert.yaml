@@ -82,3 +82,21 @@ groups:
         labels:
           severity: "critical"
           alertname: "OrderTracker5xxErrors"
+
+contactPoints:
+  - orgId: 1
+    name: "incident-responder-webhook"
+    receivers:
+      - uid: "responder_webhook"
+        type: "webhook"
+        settings:
+          url: "http://10.215.24.1:8001/alerts"
+          httpMethod: "POST"
+
+policies:
+  - orgId: 1
+    receiver: "incident-responder-webhook"
+    group_by: ["alertname"]
+    group_wait: 0s
+    group_interval: 5s
+    repeat_interval: 1h

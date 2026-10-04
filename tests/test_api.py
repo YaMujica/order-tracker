@@ -33,3 +33,13 @@ def test_create_and_update_order(client):
 
 def test_missing_order(client):
     assert client.get("/api/orders/missing").status_code == 404
+
+
+def test_express_order_detail(client):
+    response = client.get("/api/orders/express-1002")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["id"] == "express-1002"
+    assert data["priority"] == "express"
+    assert "estimated_delivery" in data
+
