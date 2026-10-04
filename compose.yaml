@@ -8,14 +8,80 @@ services:
       - "127.0.0.1:${ORDER_TRACKER_PORT:-8000}:8000"
     environment:
       ORDER_DB_PATH: /data/orders.db
+      OTEL_EXPORTER_OTLP_ENDPOINT: "collector:4317"
     volumes:
       - orders:/data
     restart: unless-stopped
+    depends_on:
+      collector:
+        condition: service_started
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
       interval: 5s
       timeout: 3s
       retries: 12
+
+  collector:
+    image: otel/opentelemetry-collector-contrib:0.110.0
+    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    volumes:
+      - ./observability/collector.yaml:/etc/otelcol-contrib/config.yaml:ro
+    ports:
+      - "127.0.0.1:4317:4317"
+      - "127.0.0.1:4318:4318"
+      - "127.0.0.1:8889:8889"
+    depends_on:
+      - prometheus
+      - tempo
+      - loki
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--web.enable-remote-write-receiver"
+    volumes:
+      - ./observability/prometheus.yaml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "127.0.0.1:9090:9090"
+    restart: unless-stopped
+
+  tempo:
+    image: grafana/tempo:2.6.0
+    command: ["-config.file=/etc/tempo.yaml"]
+    volumes:
+      - ./observability/tempo.yaml:/etc/tempo.yaml:ro
+    ports:
+      - "127.0.0.1:3200:3200"
+    restart: unless-stopped
+
+  loki:
+    image: grafana/loki:3.2.0
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+    volumes:
+      - ./observability/loki.yaml:/etc/loki/local-config.yaml:ro
+    ports:
+      - "127.0.0.1:3100:3100"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./observability/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+      - ./observability/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./observability/grafana/dashboards:/etc/grafana/dashboards:ro
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - prometheus
+      - tempo
+      - loki
+    restart: unless-stopped
 
 volumes:
   orders:

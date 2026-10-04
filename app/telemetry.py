@@ -57,13 +57,13 @@ def setup_telemetry(app):
 
         _trace_provider = TracerProvider(resource=resource)
         _trace_provider.add_span_processor(
-            BatchSpanProcessor(OTLPSpanExporter(endpoint=otlp_endpoint, insecure=True))
+            SimpleSpanProcessor(OTLPSpanExporter(endpoint=otlp_endpoint, insecure=True))
         )
         trace.set_tracer_provider(_trace_provider)
 
         _logger_provider = LoggerProvider(resource=resource)
         _logger_provider.add_log_record_processor(
-            BatchLogRecordProcessor(
+            SimpleLogRecordProcessor(
                 OTLPLogExporter(endpoint=otlp_endpoint, insecure=True)
             )
         )
